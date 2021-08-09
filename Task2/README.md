@@ -1,3 +1,4 @@
+Steps:
 * Start two ec2 instances
 * Copy private keys in both machines
 * Ssh to one of the machines
