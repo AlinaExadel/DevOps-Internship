@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+
+   web:
+     image: alinatkabladze/task4
+     ports:
+       - 80
+   db:
+     image: redis:6.2.5-alpine
+
+   jenkins:
+     image: jenkins/jenkins
+     ports:
+     - 8000:8000
+     - 50000:50000
+     volumes:
+     - jenkins_home:/var/jenkins_home
+     depends_on:
+     - db
+    
+volumes:
+     jenkins_home:
