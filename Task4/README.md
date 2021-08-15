@@ -13,8 +13,8 @@
    * Create docker image from Dockerfile - docker build -t task4
    * My IP - http://3.18.108.169/
  * Push your docker image to docker hub
-   * docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
-   * docker push <hub-user>/<repo-name>:<tag>
+   * docker tag existing-image hub-user/repo-name:tag
+   * docker push hub-user/repo-name:tag
    * My repo path - https://hub.docker.com/repository/docker/alinatkabladze/task4
  * Create Docker-Compose 
    * docker-compose.yml link - https://github.com/AlinaExadel/DevOps-Internship/blob/master/Task4/docker-compose.yml
