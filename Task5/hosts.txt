@@ -1,0 +1,8 @@
+[prod_servers]
+linux1 ansible_host=3.14.251.88 
+linux2 ansible_host=18.223.158.85 
+
+[prod_servers:vars]
+ansible_user=ec2-user 
+ansible_ssh_private_key_file=/home/ec2-user/.ssh/linux_ansible.pem
+
