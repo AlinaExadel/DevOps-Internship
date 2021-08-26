@@ -1,6 +1,8 @@
 pipeline {
     agent { label 'docker-slave-2' }
-    
+       environment {
+        PASSWORD = credentials('PASSWORD')
+    }
     stages {
         stage('Docker Test') {
             steps {
