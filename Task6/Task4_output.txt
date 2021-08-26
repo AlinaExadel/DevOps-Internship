@@ -1,0 +1,8 @@
+Started by user alina
+Started by user alina
+Running as SYSTEM
+Building remotely on docker-slave-1-00000zcrfgcl6 on docker-1 (docker-slave-1) in workspace /home/jenkins/workspace/timeStamp_project
+[timeStamp_project] $ /bin/sh -xe /tmp/jenkins3576186696715934060.sh
++ echo Current time 2021-08-26 16:49:34 GMT+04:00
+Current time 2021-08-26 16:49:34 GMT+04:00
+Finished: SUCCESS

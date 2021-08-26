@@ -1,0 +1,24 @@
+Started by user alina
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on docker-slave-2-0000176qsgfda on docker-2 in /home/jenkins/workspace/Pipeline2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Docker Test)
+[Pipeline] sh
++ whoami
+jenkins
+[Pipeline] sh
++ ls -la /var/run/docker.sock
+srwxrwxrwx 1 root 998 0 Aug 26 11:50 /var/run/docker.sock
+[Pipeline] sh
++ docker ps -a
+CONTAINER ID   IMAGE                             COMMAND                  CREATED         STATUS         PORTS                                     NAMES
+ba856e6eda44   gogasamu111/jenkins-docker-test   "/usr/sbin/sshd -D -???"   8 seconds ago   Up 7 seconds   0.0.0.0:49154->22/tcp, :::49154->22/tcp   bold_knuth
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

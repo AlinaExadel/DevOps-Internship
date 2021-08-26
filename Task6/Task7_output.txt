@@ -1,0 +1,77 @@
+Started by user alina
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on docker-slave-2-00002e6w55ypz on docker-2 in /home/jenkins/workspace/Pipeline3
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Docker Test)
+[Pipeline] sh
++ whoami
+jenkins
+[Pipeline] sh
++ ls -la /var/run/docker.sock
+srwxrwxrwx 1 root 998 0 Aug 26 11:50 /var/run/docker.sock
+[Pipeline] sh
++ docker ps -a
+CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+e4847744e5dc   gogasamu111/jenkins-docker-test   "/usr/sbin/sshd -D -???"   7 seconds ago    Up 6 seconds    0.0.0.0:49159->22/tcp, :::49159->22/tcp   suspicious_leavitt
+294fd15b819c   gogasamu111/exadelweb23           "script.sh"              25 minutes ago   Up 25 minutes   80/tcp                                    exciting_elion
+c984ba54fd56   gogasamu111/exadelweb23           "script.sh"              25 minutes ago   Up 25 minutes   80/tcp                                    crazy_haibt
+c4d1f302c727   gogasamu111/exadelweb23           "script.sh"              27 minutes ago   Up 27 minutes   80/tcp                                    youthful_hodgkin
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Git Clone)
+[Pipeline] sh
++ git clone https://github.com/AlinaExadel/DevOps-Internship.git
+Cloning into 'DevOps-Internship'...
+[Pipeline] sh
++ ls -l DevOps-Internship/Task4
+total 12
+-rw-rw-r-- 1 jenkins jenkins  262 Aug 26 13:55 Dockerfile
+-rw-rw-r-- 1 jenkins jenkins 1290 Aug 26 13:55 README.md
+-rw-rw-r-- 1 jenkins jenkins  330 Aug 26 13:55 docker-compose.yml
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Dockerfile)
+[Pipeline] sh
++ docker build -t alinatkabladze/task4 ./DevOps-Internship/Task4/
+Sending build context to Docker daemon   5.12kB
+
+Step 1/7 : FROM ubuntu:16.04
+ ---> 38b3fa4640d4
+Step 2/7 : ENV DEVOPS="Alina Tkabladze"
+ ---> Using cache
+ ---> 59374d99ee4a
+Step 3/7 : RUN apt-get -y update
+ ---> Using cache
+ ---> 3e11dc678f63
+Step 4/7 : RUN apt-get install -y apache2
+ ---> Using cache
+ ---> cb5ade513647
+Step 5/7 : RUN echo "<html><h2>Alina Tkabladze Sandbox 2021!<br>$DEVOPS</h2><html>" > /var/www/html/index.html
+ ---> Using cache
+ ---> d4417ff420b9
+Step 6/7 : CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+ ---> Using cache
+ ---> 7ada7483d472
+Step 7/7 : EXPOSE 80
+ ---> Using cache
+ ---> d3a80d038c07
+Successfully built d3a80d038c07
+Successfully tagged alinatkabladze/task4:latest
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run Container)
+[Pipeline] sh
++ docker run -d -e PASSWORD= alinatkabladze/task4
+c041ca4fa37ad2a6a96265daff83970e58701d3c91371bf021f120897ff5f1ba
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

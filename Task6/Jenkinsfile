@@ -1,0 +1,31 @@
+pipeline {
+    agent { label 'docker-slave-2' }
+    
+    stages {
+        stage('Docker Test') {
+            steps {
+                sh 'whoami'
+                sh 'ls -la /var/run/docker.sock'
+                sh 'docker ps -a'
+            }
+        }
+        stage('Git Clone') {
+            steps {
+                sh 'git clone https://github.com/AlinaExadel/DevOps-Internship.git'
+                sh 'ls -l DevOps-Internship/Task4'
+            }
+        }
+        
+        stage('Build Dockerfile') {
+            steps {
+                sh 'docker build -t alinatkabladze/task4 ./DevOps-Internship/Task4/'
+            }
+            
+        }
+          stage('Run Container') {
+            steps {
+                sh 'docker run -d -e PASSWORD=${PASSWORD} alinatkabladze/task4'
+            }
+          }
+        }
+}
