@@ -65,7 +65,7 @@ Go to Monitoring -> Hosts -> latest data
 Press the resource name 
 Press ping
 ```
-![image](https://user-images.githubusercontent.com/88404376/131841538-c8829f67-6c58-4c6b-bb00-27c31144dfb3.png)
+![image](https://user-images.githubusercontent.com/88404376/131848204-c4951bbd-0ee0-4b54-a75a-4335a3b47959.png)
 
 1.6 Provoke an alert - and create a Maintenance instruction
 
@@ -102,11 +102,39 @@ Configure the ElasticSearch displayed in Kibana
 ```
 Visualize the logs in the Kibana interface.
 ```
-![image](https://user-images.githubusercontent.com/88404376/131844231-2a277463-5c9f-4822-a5c2-9f23d3c31a18.png)
+
+![image](https://user-images.githubusercontent.com/88404376/131848967-0b27feac-9a61-43e6-8f19-339dcafd1585.png)
 
 2.5 Configure monitoring in ELK, get metrics from your running containers
 
 ```
  Go to Home -> add metric data -> docker metrics
- 
+ Configure Metricbeat
+ See the result
 ```
+![image](https://user-images.githubusercontent.com/88404376/131849182-786ddb17-a1bb-4450-8048-93f464500660.png)
+
+See the dashboard
+
+![image](https://user-images.githubusercontent.com/88404376/131849288-be5adeb3-edeb-48dc-95c4-1b832b09c62e.png)
+
+Custom dashboard
+
+![image](https://user-images.githubusercontent.com/88404376/131849413-802d8bc1-6f50-42c4-a4d1-2fef9df02116.png)
+
+## Grafana
+
+Go to http://(IP):3000 
+Log in to grafana (admin,admin)
+Go to Configuration -> Data Sources -> Add data source
+Change configuration
+Press 'Save and Test'
+
+![image](https://user-images.githubusercontent.com/88404376/131849779-c49e095b-090b-43b8-87fb-72f4f59f7582.png)
+
+![image](https://user-images.githubusercontent.com/88404376/131849866-c8b72c64-fd03-4ec5-84a1-e4c49e5198a7.png)
+
+Preview dashboard
+
+![image](https://user-images.githubusercontent.com/88404376/131850145-4629378b-d214-445b-9cd7-79527f40f178.png)
+
