@@ -1,4 +1,4 @@
--- Zabbix
+## Zabbix
 
 - 1.1 Install on server, configure web and base
 ```
